@@ -1,0 +1,42 @@
+<link media="(min-width: 1040px)" rel="stylesheet" href="css/intro-pc.css">
+<link media="(max-width: 1040px)" rel="stylesheet" href="css/intro-phone.css">
+<div class="intro-container" id="intro">
+    <div class="wrapper">
+        <h3 class="inline">教 学 内 容：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="content">
+                {{content}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">目 标 要 求：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="objective">
+                {{objective}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">学 时 安 排：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="arrangement">
+                {{arrangement}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">考 核 方 式：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="assessment">
+                {{assessment}}
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <input v-if="editable" type="button" value="修改" class="edit-button" @click="updateData">
+    </div>
+</div>
+<script src="js/teachPlan.js"></script>
+
+

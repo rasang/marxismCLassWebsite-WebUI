@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <link media="(min-width: 600px)" rel="stylesheet" href="css/login-pc.css">
+    <link media="(max-width: 600px)" rel="stylesheet" href="css/login-phone.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>马克思主义哲学原理</title>
+</head>
+
+<body>
+    <div class="title">
+        <h2>《马克思主义哲学原理》课堂</h2>
+    </div>
+    <div id="main">
+        <form v-bind:action="url_1" method="POST">
+            <div class="panel-wrapper">
+                <div class="switch noselect">
+                    <h2 style="margin-top: 100px;">欢迎学习</h2>
+                    <h2>《马克思主义哲学原理》</h2>
+                    <div class="saying-wrapper">
+                        <div class="saying noselect">
+                            人只有为自己同时代人的完善，为他们的幸福而工作，他才能达到自身的完善。
+                        </div>
+                    </div>
+                    <transition>
+                        <input v-if="flag" type="button" :value="switchButton" class="login-botton"
+                            @click="switchPanel">
+                    </transition>
+                </div>
+                <div class="login-wrapper">
+                    <div class="login-cell">
+                        <transition>
+                            <div class="hint">
+                                &nbsp;
+                                <h1 v-if="flag" class="noselect">{{tip_1}}</h1>
+                            </div>
+                        </transition>
+                        <input type="text" class="login-input" placeholder="账号" name="account" v-model="username" maxlength="10">
+                        <input type="password" class="login-input" placeholder="密码" name="password" v-model="password" maxlength="20">
+                        <br>
+                        <transition>
+                            &nbsp;
+                            <input v-if="flag" @click="login" type="button" :value="loginButton" class="login-botton" name="submit">
+                        </transition>
+                        <transition>
+                            &nbsp;
+                            <input v-if="flag" type="reset" value="重置" class="login-botton" name="reset">
+                        </transition>
+                        <div class="mobile-register">
+                            <transition>
+                                &nbsp;<h4 v-if="flag">{{mobileRegister_1}}</h4>
+                            </transition>
+                            <transition>
+                                &nbsp;
+                                <input v-if="flag" type="button" class="login-botton" style="margin-top: 0;"
+                                    value="点击这里" @click="switchPanel">
+                            </transition>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/login.js"></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>首页</title>
+    <link media="(min-width: 1040px)" rel="stylesheet" href="css/index-pc.css">
+    <link media="(max-width: 1040px)" rel="stylesheet" href="css/index-phone.css">   
+    <link href="css/jquery.touchPDF.css" rel="stylesheet" media="screen" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/touchpdf/pdf.compatibility.js"></script>
+    <script type="text/javascript" src="js/touchpdf/pdf.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.min.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.touchSwipe.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.touchPDF.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.panzoom.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.mousewheel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body onload="loadHTML('intro.html')">
+    <div class="main">
+        <div class="menu">
+            <transition-group>
+                <div class="button-wrapper" onclick="loadHTML('intro.html')">
+                    <div class="button noselect">
+                        <img class="logo" src="img/intro.svg">
+                        <h3 style="color: #8a8a8a;">简介</h3>
+                    </div>
+                </div>
+                <div class="button-wrapper" onclick="loadHTML('teachPlan.html')">
+                    <div class="button noselect">
+                        <img class="logo" src="img/outline.svg">
+                        <h3 style="color: #8a8a8a;">大纲</h3>
+                    </div>
+                </div>
+                <div class="button-wrapper" onclick="loadHTML('lessonPlan.html')">
+                    <div class="button noselect">
+                        <img class="logo" src="img/teachingPlan.svg">
+                        <h3 style="color: #8a8a8a;">教案</h3>
+                    </div>
+                </div>
+                <div class="button-wrapper" onclick="loadHTML('material.html')">
+                    <div class="button noselect">
+                        <img class="logo" src="img/courseware.svg">
+                        <h3 style="color: #8a8a8a;">资料</h3>
+                    </div>
+                </div>
+            </transition-group>
+        </div>
+        <div class="showArea">
+            <div id="showArea-container"></div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.intro-container{
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+.frame-teacher{
+    margin-top: 16px;
+    border-radius: 15px;
+    background: #ecf0f3;
+    box-shadow: inset 6px 6px 8px #babec0, 
+                inset -6px -6px 8px #ffffff;
+}
+.text{
+    outline: none;
+    padding: 15px 20px 15px 20px;
+}
+.frame-student{
+    margin-top: 16px;
+    border-radius: 15px;
+    background: #ecf0f3;
+    box-shadow:  8px 8px 10px #babec0, 
+                 -8px -8px 10px #ffffff;
+}
+.wrapper{
+    margin-bottom: 30px;
+}
+.edit-button{
+    font-size: 17px;
+    font-weight: bolder;
+    margin-left: 670px;
+    margin-top: -10px;
+    outline: none;
+    border-width: 0 ;
+    text-align: center;
+    transition: all 0.10s;
+    height: 40px;
+    width: 80px;
+    border-radius: 13px;
+    background: #ecf0f3;
+    box-shadow:  6px 6px 11px #babec0, 
+                 -6px -6px 11px #ffffff;
+}
+.edit-button:hover{
+    border-radius: 13px;
+    background: #ecf0f3;
+    box-shadow:  6px 6px 11px #babec0, 
+                 -6px -6px 11px #ffffff;
+    transform: translateY(-3px);
+}
+.inline{
+    display: inline;
+}

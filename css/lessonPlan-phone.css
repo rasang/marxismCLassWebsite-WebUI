@@ -1,0 +1,38 @@
+.plan-container{
+    display: flex;
+    flex-direction: row;
+    width: calc(100vw);
+    flex-wrap: wrap;
+    margin-top: -5px;
+}
+.plan{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+.plan:active{
+    border-radius: 10px;
+    background: #ecf0f3;
+    box-shadow:  12px 12px 24px #b8bbbe, 
+                 -12px -12px 24px #ffffff;
+    transform: translateY(-10px);
+}
+.pdf-type{
+    margin-top: 10px;
+    width: 50px;
+    pointer-events:none;
+}
+.v-enter,.v-leave-to {
+    opacity: 0;
+}
+    /* v-enter-active 【入场动画的时间段】 */
+    /* v-leave-active 【离场动画的时间段】 */
+.v-enter-active,.v-leave-active{
+    transition: all 0.8s;
+}

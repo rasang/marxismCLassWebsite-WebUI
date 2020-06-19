@@ -1,0 +1,50 @@
+<link media="(min-width: 1040px)" rel="stylesheet" href="css/intro-pc.css">
+<link media="(max-width: 1040px)" rel="stylesheet" href="css/intro-phone.css">
+<div class="intro-container" id="intro">
+    <div class="wrapper">
+        <h3 class="inline">课 程 概 要：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="outline">
+                {{outline}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">课 程 教 材：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="material">
+                {{material}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">课 程 特 色：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="characteristic">
+                {{characteristic}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">课 程 条 件：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="condition">
+                {{condition}}
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">课 程 环 境：</h3>
+        <div :class="frameClass">
+            <div class="text" :contenteditable="editable" id="environment">
+                {{environment}}
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <input v-if="editable" type="button" value="修改" class="edit-button" @click="updateData">
+    </div>
+</div>
+<script src="js/intro.js"></script>
+
+
