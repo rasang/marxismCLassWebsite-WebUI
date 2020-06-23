@@ -1,0 +1,34 @@
+<link media="(min-width: 1040px)" rel="stylesheet" href="css/intro-pc.css">
+<link media="(max-width: 1040px)" rel="stylesheet" href="css/intro-phone.css">
+<div class="intro-container" id="userInfo">
+    <div class="wrapper">
+        <h3 class="inline">学 校：</h3>
+        <div class="frame-teacher">
+            <div class="text" contenteditable="true" id="school">
+                <pre>{{school | unescape}}</pre>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">班 级：</h3>
+        <div class="frame-teacher">
+            <div class="text" contenteditable="true" id="clazz">
+                <pre>{{clazz | unescape}}</pre>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h3 class="inline">真实姓名：</h3>
+        <div class="frame-teacher">
+            <div class="text" contenteditable="true" id="realName">
+                <pre>{{realName | unescape}}</pre>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <input type="button" value="修改" class="edit-button" @click="updateData">
+    </div>
+</div>
+<script src="js/userInfo.js"></script>
+
+

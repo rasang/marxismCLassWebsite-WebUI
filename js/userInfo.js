@@ -5,15 +5,11 @@ function refreshToken(res){
     }
 }
 var intro = new Vue({
-    el:"#intro",
+    el:"#userInfo",
     data:{
-        frameClass: localStorage.getItem("identification")=="T"?"frame-teacher":"frame-student",
-        editable: localStorage.getItem("identification")=="T"?true:false,
-        outline: "",
-        material: "",
-        characteristic: "",
-        condition: "",
-        environment: ""
+        school: "",
+        clazz: "",
+        realName: ""
     },
     filters: {
         unescape:function (html) {
@@ -31,14 +27,12 @@ var intro = new Vue({
     methods: {
         getData(){
             that = this;
-            axios.get("http://127.0.0.1:8080/courseIntroduce",{headers:{'token':localStorage.getItem('token')}})
+            axios.get("http://127.0.0.1:8080/userInfo",{headers:{'token':localStorage.getItem('token')}})
             .then(res => {
                 if(res.data.code=="200"){
-                    that.outline = res.data.data.course_summary;
-                    that.material = res.data.data.course_materials;
-                    that.characteristic = res.data.data.teaching_characteristics;
-                    that.condition = res.data.data.teaching_conditions;
-                    that.environment = res.data.data.teaching_environment;
+                    that.school = res.data.data.school;
+                    that.clazz = res.data.data.clazz;
+                    that.realName = res.data.data.realName;
                     refreshToken(res);
                 }
                 else if(res.data.code=="401"){
@@ -54,13 +48,10 @@ var intro = new Vue({
             })
         },
         updateData(){
-            var outline = document.getElementById("outline").innerText.replace(/\n/g,'<br>');
-            var material = document.getElementById("material").innerText.replace(/\n/g,'<br>');
-            var characteristic = document.getElementById("characteristic").innerText.replace(/\n/g,'<br>');
-            var condition = document.getElementById("condition").innerText.replace(/\n/g,'<br>');
-            var environment = document.getElementById("environment").innerText.replace(/\n/g,'<br>');
-            axios.post("http://127.0.0.1:8080/courseIntroduce","summary="+outline+"&materials="+material+"&characteristics="+characteristic + 
-            "&conditions=" + condition +  "&environment=" + environment,{headers:{'token':localStorage.getItem('token')}})
+            var school = document.getElementById("school").innerText.replace(/\n/g,'<br>');
+            var clazz = document.getElementById("clazz").innerText.replace(/\n/g,'<br>');
+            var realName = document.getElementById("realName").innerText.replace(/\n/g,'<br>');
+            axios.post("http://127.0.0.1:8080/userInfo","school="+school+"&clazz="+clazz+"&realName="+realName ,{headers:{'token':localStorage.getItem('token')}})
             .then(res => {
                 if(res.data.code=="200"){
                     alert(res.data.msg);

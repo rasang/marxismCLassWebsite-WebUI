@@ -3,6 +3,7 @@
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 25px;
+    padding-bottom: 10px;
 }
 .frame-teacher{
     margin-top: 16px;
@@ -54,4 +55,9 @@
 }
 .center{
     text-align: center;
+}
+pre{
+    font-size: 17px;
+    line-height: 24px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }

@@ -10,8 +10,8 @@
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 25px;
-    width: 150px;
-    height: 150px;
+    width: 145px;
+    height: 145px;
     font-weight: 600;
     transition: all 0.5s;
 }
@@ -33,4 +33,28 @@
     /* v-leave-active 【离场动画的时间段】 */
 .v-enter-active,.v-leave-active{
     transition: all 0.8s;
+}
+.plan-name{
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.select{
+    width: 100%;
+    height: 100%;
+    border-style: dashed;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 28px;
+}
+
+.delete-botton{
+    margin-bottom: 30px;
+}
+
+.grey{
+    background-color: gray !important;
+    background: grey !important;
 }

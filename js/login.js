@@ -68,6 +68,7 @@ var index = new Vue({
                 }
                 else{
                     if(res.data.code!="200"){
+                        console.log(res);
                         alert("注册失败");
                     }
                     else{

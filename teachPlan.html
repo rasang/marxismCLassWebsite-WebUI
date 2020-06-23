@@ -5,7 +5,7 @@
         <h3 class="inline">教 学 内 容：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="content">
-                {{content}}
+                <pre>{{content | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
         <h3 class="inline">目 标 要 求：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="objective">
-                {{objective}}
+                <pre>{{objective | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <h3 class="inline">学 时 安 排：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="arrangement">
-                {{arrangement}}
+                <pre>{{arrangement | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <h3 class="inline">考 核 方 式：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="assessment">
-                {{assessment}}
+                <pre>{{assessment | unescape}}</pre>
             </div>
         </div>
     </div>

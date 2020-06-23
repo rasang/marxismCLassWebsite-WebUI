@@ -1,32 +1,23 @@
 <div style="transition: all 10s;">
     <link media="(min-width: 1040px)" rel="stylesheet" href="css/lessonPlan-pc.css">
     <link media="(max-width: 1040px)" rel="stylesheet" href="css/lessonPlan-phone.css">
-    <div style="text-align: center;">
+    <link rel="stylesheet" href="css/login-phone.css">
+    <div style="text-align: center;" id="material-container">
         <div class="plan-container">
-            <div class="plan">
-                <img class="pdf-type" src="img/PPT.svg">
-                <div class="plan-name">Test.PPT</div>
+            <div class="plan" @dblclick="loadMaterial(file.url)" v-for="file in files">
+                <div onclick="select(this)" :url="file.url">
+                    <img class="pdf-type" :src="getLogoNameByType(file.url)">
+                    <div class="plan-name" :title="file.fileName">{{file.fileName}}</div>
+                </div>
             </div>
-            <div class="plan">
-                <img class="pdf-type" src="img/DOC.svg">
-                <div class="plan-name">Test.doc</div>
-            </div>
-            <div class="plan">
-                <img class="pdf-type" src="img/PPT.svg">
-                <div class="plan-name">Test.PPT</div>
-            </div>
-            <div class="plan">
-                <img class="pdf-type" src="img/PPT.svg">
-                <div class="plan-name">Test.PPT</div>
-            </div>
-            <div class="plan">
-                <img class="pdf-type" src="img/PPT.svg">
-                <div class="plan-name">Test.PPT</div>
-            </div>
-            <div class="plan">
-                <img class="pdf-type" src="img/PPT.svg">
-                <div class="plan-name">Test.PPT</div>
+            <div v-if="flag" class="plan" id="upload" onclick="document.getElementById('fileUpload').click()">
+                <input type="file" style="display: none;" id="fileUpload" v-on:input="upload">
+                <img style="height: 85px;margin-top: 20px;" src="img/addFile.svg">
+                <div class="plan-name">添加文件</div>
             </div>
         </div>
+        <input v-if="flag" id="delete" type="button" value="删除选中" class="login-botton delete-botton grey" disabled="disabled" @click="deleteFile">
     </div>
 </div>
+<script src="js/material.js"></script>
+<script>getMaterialData()</script>

@@ -4,6 +4,9 @@ html{
 body{
     background-color: #ecf0f3;
 }
+h3{
+    font-size: calc(2vh);
+}
 .main{
     height: 100%;
     width: 1200px;
@@ -35,7 +38,7 @@ body{
 .button-wrapper{
     text-align: center;
     transition: all 0.15s;
-    height: 25%;
+    height: 20%;
 }
 .button-wrapper:hover{
     border-radius: 28px;
@@ -54,8 +57,8 @@ body{
     transition: all 0.8s;
 }
 .logo{
-    width: 60px;
-    margin-top: 60px;
+    width: calc(5vh);
+    margin-top: calc(5vh);
 }
 .pdfobject-container {
     margin: 0 auto;

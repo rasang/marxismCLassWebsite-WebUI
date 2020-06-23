@@ -36,3 +36,29 @@
 .v-enter-active,.v-leave-active{
     transition: all 0.8s;
 }
+.plan-name{
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.upload-logo{
+    height: 40px !important;
+}
+
+.select{
+    height: 100%;
+    border-style: dashed;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 20px;
+}
+
+.delete-botton{
+    margin-bottom: 30px;
+}
+
+.grey{
+    background-color: gray !important;
+    background: grey !important;
+}

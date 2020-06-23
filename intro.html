@@ -5,7 +5,7 @@
         <h3 class="inline">课 程 概 要：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="outline">
-                {{outline}}
+                <pre>{{outline | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
         <h3 class="inline">课 程 教 材：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="material">
-                {{material}}
+                <pre>{{material | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <h3 class="inline">课 程 特 色：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="characteristic">
-                {{characteristic}}
+                <pre>{{characteristic | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <h3 class="inline">课 程 条 件：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="condition">
-                {{condition}}
+                <pre>{{condition | unescape}}</pre>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
         <h3 class="inline">课 程 环 境：</h3>
         <div :class="frameClass">
             <div class="text" :contenteditable="editable" id="environment">
-                {{environment}}
+                <pre>{{environment | unescape}}</pre>
             </div>
         </div>
     </div>
