@@ -1,6 +1,7 @@
 new Vue({
     el: "#comments",
     data: {
+        flag: localStorage.getItem("identification")=="T"?true:false,
         comments: [],
         page: 1
     },
@@ -21,9 +22,17 @@ new Vue({
         getCommentsData() {
             that = this;
             var fileName = document.getElementById("current-file").innerText;
-            axios.get("http://127.0.0.1:8080/comment?filename=" + fileName + "&index=" + that.page + "&size=5", { headers: { 'token': localStorage.getItem('token') } })
+            axios.get("http://plumk.site:8080/comment?filename=" + fileName + "&index=" + that.page + "&size=5", { headers: { 'token': localStorage.getItem('token') } })
                 .then(res => {
                     if (res.data.code == "200") {
+                        for(var i=0;i<res.data.data.list.length;i++){
+                            if(res.data.data.list[i].username==localStorage.getItem("username")){
+                                res.data.data.list[i]["mine"] = true;
+                            }
+                            else{
+                                res.data.data.list[i]["mine"] = false;
+                            }
+                        }
                         that.comments = that.comments.concat(res.data.data.list);
                         that.page = that.page + 1;
                         console.log(that.comments);
@@ -39,6 +48,25 @@ new Vue({
         },
         ifNotComments() {
             return this.comments.length == 0;
+        },
+        deleteComment(id){
+            that = this;
+            var fileName = document.getElementById("current-file").innerText;
+            axios.delete("http://plumk.site:8080/comment?"+"filename="+fileName+"&id="+id,{ headers: { 'token': localStorage.getItem('token') } })
+            .then(res => {
+                alert(res.data.msg);
+                if(res.data.code=="200"){
+                    for(var i = 0; i < that.comments.length; i++){
+                        if(that.comments[i].id == id){
+                            that.comments.splice(i,1);
+                        }
+                    }
+                }
+            })
+            .catch(err => {
+                alert(err.msg);
+                console.error(err); 
+            })
         }
     },
     mounted() {
@@ -60,7 +88,7 @@ new Vue({
             var comment = document.getElementById("user-comment").innerText;
             var fileName = document.getElementById("current-file").innerText;
             comment = comment.replace(/\n/g, '<br>');
-            axios.post("http://127.0.0.1:8080/comment", "filename=" + fileName + "&content=" + comment, { headers: { 'token': localStorage.getItem('token') } })
+            axios.post("http://plumk.site:8080/comment", "filename=" + fileName + "&content=" + comment, { headers: { 'token': localStorage.getItem('token') } })
                 .then(res => {
                     if (res.data.code == "200") {
                         alert("评论成功");

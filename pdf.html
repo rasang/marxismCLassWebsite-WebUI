@@ -17,10 +17,13 @@
 </div>
 <div id="myPDF" class="showPdf"></div>
 <div class="comments-wrapper" id="comments">
-    <div class="comment-wrapper" v-for="comment in comments">
+    <div :id="comment.id" class="comment-wrapper" v-for="comment in comments">
         <img src="img/userImage.svg" class="user-logo">
         <div class="user-name">
             {{comment.username | unescape}}
+        </div>
+        <div v-if="comment.mine" class="delete-button-wrapper">
+            <input class="delete-botton" type="button" value="删除" @click="deleteComment(comment.id)">
         </div>
         <div class="comment">
             <pre>{{comment.content | unescape}}</pre>

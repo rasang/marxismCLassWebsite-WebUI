@@ -136,3 +136,22 @@ pre{
     line-height: 24px;
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
+.delete-botton{
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border-width: 0ch;
+    background-color: #4B70E2 ;
+    background: linear-gradient(145deg, #4c71e4, #405fc0);
+    color: #f9f9f9;
+    box-shadow: 8px 8px 16px #d1d9e6, 
+                -8px -8px 16px #f9f9f9;
+}
+.delete-button-wrapper{
+    display: inline-block;
+    float: right;
+    margin-top: 30px;
+    margin-right: 30px;
+    vertical-align: auto;
+}

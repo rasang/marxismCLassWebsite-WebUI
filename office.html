@@ -23,6 +23,9 @@
         <div class="user-name">
             {{comment.username | unescape}}
         </div>
+        <div v-if="comment.mine" class="delete-button-wrapper">
+            <input class="delete-botton" type="button" value="删除" @click="deleteComment(comment.id)">
+        </div>
         <div class="comment">
             <pre>{{comment.content | unescape}}</pre>
         </div>
